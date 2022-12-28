@@ -1,0 +1,8 @@
+{
+    "name": "fsn/financas",
+    "autoload": {
+        "psr-4": {
+            "App\\": "public/App/"
+        }
+    }
+}
