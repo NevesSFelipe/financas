@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+if($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $_SESSION['integrante'] = $_POST['nome_integrante'];
+    header('Location: calendario.php');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -7,6 +17,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     </head>
     <body>
+
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="index.php">Finanças</a>
 
@@ -37,7 +48,7 @@
 
             <div class="card-deck">
                 <div class="card">
-                    <img src="assets/img/casa.png" class="card-img-top w-100 h-50" alt="casa" />
+                    <img src="assets/img/casa.png" class="card-img-top w-100 h-50" alt="Casa" />
                     <div class="card-body">
                         <h4 class="card-title text-info text-center"><strong>Casa</strong></h4>
                         <ul class="list-group text-center">
@@ -52,9 +63,9 @@
                         </ul>
                     </div>
                     <div class="card-footer">
-                        <form action="relatorios.php" method="POST">
+                        <form action="integrantes.php" method="POST">
                             <div class="form-group">
-                                <input type="text" hidden class="form-control" name="nome_integrante" value="casa" />
+                                <input type="text" hidden class="form-control" name="nome_integrante" value="Casa" />
                             </div>
                             <button type="submit" class="btn btn-info w-100 mb-3">Acessar</button>
                         </form>
@@ -78,7 +89,7 @@
                         </ul>
                     </div>
                     <div class="card-footer">
-                        <form action="relatorios.php" method="POST">
+                        <form action="integrantes.php" method="POST">
                             <div class="form-group">
                                 <input type="text" hidden class="form-control" name="nome_integrante" value="Felipe" />
                             </div>
@@ -104,9 +115,9 @@
                         </ul>
                     </div>
                     <div class="card-footer">
-                        <form action="relatorios.php" method="POST">
+                        <form action="integrantes.php" method="POST">
                             <div class="form-group">
-                                <input type="text" hidden class="form-control" name="nome_integrante" value="geraldo" />
+                                <input type="text" hidden class="form-control" name="nome_integrante" value="Geraldo" />
                             </div>
                             <button type="submit" class="btn btn-info w-100 mb-3">Acessar</button>
                         </form>
