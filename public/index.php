@@ -45,7 +45,7 @@ session_start();
                 <div class="form-row">
                     <div class="form-group col-md-12">
                         <label for="data_pagamento">Data do Pagamento</label>
-                        <input type="date" value="<?php echo date('Y-m-d') ?>" class="form-control" id="data_pagamento" name="data_pagamento" readonly />
+                        <input required type="date" class="form-control" id="data_pagamento" name="data_pagamento" />
                     </div>
                 </div>
                 <div class="form-row">
@@ -68,13 +68,20 @@ session_start();
                         <input required type="number" step="0.01" min="0.01" class="form-control" id="valor" name="valor" placeholder="Valor" />
                     </div>
                 </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <label for="obs">Observação</label>
+                        <input required type="text" class="form-control" id="obs" name="obs" placeholder="Observação" />
+                    </div>
+                </div>
                 <button type="submit" class="btn btn-info w-100">Registrar</button>
             </form>
         </div>
 
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="assets/js/jquery.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script src="https://kit.fontawesome.com/910e6444fa.js"></script>
+        <script src="assets/js/index.js"></script>
     </body>
 </html>
