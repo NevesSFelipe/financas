@@ -41,22 +41,22 @@ session_start();
 
             <hr class="bg-info" />
 
-            <form>
+            <form id="form-salvar">
                 <div class="form-row">
                     <div class="form-group col-md-12">
-                        <label for="data_pagamento">Data do Pagamento</label>
+                        <label for="data_pagamento">Data do Pagamento*</label>
                         <input required type="date" class="form-control" id="data_pagamento" name="data_pagamento" />
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="integrante">Integrante</label>
+                        <label for="integrante">Integrante*</label>
                         <select required id="integrante" name="integrante" class="form-control">
                             <option value="" selected>Selecione...</option>
                         </select>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="categoria">Categoria</label>
+                        <label for="categoria">Categoria*</label>
                         <select required id="categoria" name="categoria" class="form-control">
                             <option value="" selected>Selecione...</option>
                         </select>
@@ -64,7 +64,7 @@ session_start();
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-12">
-                        <label for="valor">Valor (R$)</label>
+                        <label for="valor">Valor (R$)*</label>
                         <input required type="number" step="0.01" min="0.01" class="form-control" id="valor" name="valor" placeholder="Valor" />
                     </div>
                 </div>
@@ -74,8 +74,11 @@ session_start();
                         <input required type="text" class="form-control" id="obs" name="obs" placeholder="Observação" />
                     </div>
                 </div>
-                <button type="submit" class="btn btn-info w-100">Registrar</button>
+                <button type="button" id="btn-salvar" class="btn btn-info w-100">Registrar</button>
             </form>
+
+            <span id="msg"></span>
+
         </div>
 
         <script src="assets/js/jquery.js"></script>

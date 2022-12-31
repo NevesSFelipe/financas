@@ -29,6 +29,19 @@ class Contas {
         return $this->banco->buscar($nome_tabela, $innerJoin, $where, null, null, $campos)->fetchAll(PDO::FETCH_CLASS);
     }
 
+    public function salvarMovimentacao(string $data_pagamento, int $id_integrante, int $id_categoria, float $valor, string $obs)
+    {
+        $array_valores = [
+            'data_pagamento' => $data_pagamento,
+            'id_integrante' => $id_integrante,
+            'id_categoria' => $id_categoria,
+            'valor' => $valor,
+            'obs' => $obs
+        ];
+
+        return $this->banco->inserir('movimentacoes', $array_valores);
+    }
+
 
 }
 

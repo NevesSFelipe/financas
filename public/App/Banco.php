@@ -36,6 +36,22 @@ class Banco {
         return $this->executarQuery($sql);
     }
 
+    public function inserir(string $nome_tabela, array $array_valores)
+    {
+        $campos = array_keys($array_valores);
+        $valores = array_values($array_valores);
+        $binds = array_pad([], count($campos), '?');
+
+        $campos = implode(',', $campos);
+        $binds = implode(',', $binds);
+
+        $sql = "INSERT INTO $nome_tabela ($campos) VALUES ($binds)";
+
+        $this->executarQuery($sql, $valores);
+
+        return $this->conexao->lastInsertId();
+    }
+
     private function executarQuery(string $sql, array $parametros = [])
     {
         try{

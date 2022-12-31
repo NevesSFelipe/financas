@@ -1,6 +1,7 @@
 $(document).ready(function(){
     montarSelectIntegrantes();
     montarSelectCategoria();
+    salvarMovimentacao();
 })
 
 function montarSelectIntegrantes()
@@ -33,4 +34,53 @@ function montarSelectCategoria()
             $('#categoria').append(msg);
        })
     })
+}
+
+function salvarMovimentacao()
+{
+    $('#btn-salvar').click(function(){
+
+        data_pagamento = $('#data_pagamento').val();
+        integrante = $('#integrante').val();
+        categoria = $('#categoria').val();
+        valor = $('#valor').val();
+        obs = $('#obs').val();
+
+        $('#alerta').remove();
+
+        if((!data_pagamento) || (!integrante) || (!categoria) || (!valor)) {
+                        
+            $('#msg').append(
+                '<div id="alerta" class="alert alert-warning mt-2 text-center" role="alert">' +
+                    'Por favor, preencha todos os campos com "*"' +
+                '</div>'
+            );
+
+            return;
+        }
+
+        $.ajax({
+            url : "core/requests.php",
+            type : 'POST',
+            data: {
+                data_pagamento: data_pagamento, 
+                integrante: integrante, 
+                categoria: categoria, 
+                valor: valor,
+                obs:  obs
+            }
+       })
+       .done(function(msg){
+
+            if(msg) {
+                $('#msg').append(
+                    '<div id="alerta" class="alert alert-success mt-2 text-center" role="alert">' +
+                        'Movimentação registrada com sucesso' +
+                    '</div>'
+                );
+            }
+       });
+
+    });
+
 }
