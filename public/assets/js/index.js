@@ -6,6 +6,7 @@ $(document).ready(function(){
     recuperarIntegrante();
     salvarMes();
     recuperarIntegranteMes();
+    listarRegistros();
 })
 
 function montarSelectIntegrantes()
@@ -229,4 +230,65 @@ function recuperarIntegranteMes()
     
     $('#nome-integrante').text(integrante);
     $('#mes').text(mes);
+}
+
+function listarRegistros()
+{
+    $.ajax({
+        url : "core/requests.php",
+        type : 'GET',
+        dataType: 'json',
+        data: {
+            id_integrante: localStorage.getItem('integrante'),
+            data_pagamento: pegarDataFiltro(localStorage.getItem('mes'))
+        }
+   })
+   .done(function(msg){
+        $('#corpo-tabela').append(msg['tabela']);
+        $('#soma-entradas').text('R$ ' + msg['somaEntradas']);
+        $('#soma-saidas').text('R$ ' + msg['somaSaidas']);
+        $('#diferenca').text('R$ ' + msg['diferenca']);
+   })
+}
+
+function pegarDataFiltro(mes)
+{
+    switch(mes) {
+ 
+        case 'Janeiro':
+            return '2023-01-01&2023-01-31'
+ 
+        case 'Fevereiro':
+            return '2023-02-01&2023-02-28'
+        
+        case 'Março':
+            return '2023-03-01&2023-03-31'
+        
+        case 'Abril':
+            return '2023-04-01&2023-04-30'
+        
+        case 'Maio':
+            return '2023-05-01&2023-05-31'
+        
+        case 'Junho':
+            return '2023-06-01&2023-06-30'
+        
+        case 'Julho':
+            return '2023-07-01&2023-07-31'
+        
+        case 'Agosto':
+            return '2023-08-01&2023-08-31'
+        
+        case 'Setembro':
+            return '2023-09-01&2023-09-30'
+        
+        case 'Outubro':
+            return '2023-10-01&2023-10-31'
+
+        case 'Novembro':
+            return '2023-11-01&2023-11-30'
+
+        case 'Dezembro':
+            return '2023-12-01&2023-12-31'
+    }
 }

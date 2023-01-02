@@ -48,7 +48,7 @@ session_start();
                                 <i class="fa-solid fa-plus"></i>
                                 Entradas
                             </h1>
-                            <h3 class="card-text">R$ 250.00</h3>
+                            <h3 class="card-text" id="soma-entradas"></h3>
                         </div>
                     </div>
                 </div>
@@ -60,7 +60,7 @@ session_start();
                                 <i class="fa-solid fa-minus"></i>
                                 Saídas
                             </h1>
-                            <h3 class="card-text">R$ 50.00</h3>
+                            <h3 class="card-text" id="soma-saidas"></h3>
                         </div>
                     </div>
                 </div>
@@ -72,7 +72,7 @@ session_start();
                                 <i class="fa-solid fa-not-equal"></i>
                                 Saldo
                             </h1>
-                            <h3 class="card-text">R$ 200.00</h3>
+                            <h3 class="card-text" id="diferenca"></h3>
                         </div>
                     </div>
                 </div>
@@ -87,20 +87,7 @@ session_start();
                         <th scope="col">Status</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">01/01/2023</th>
-                        <td>Aluguel</td>
-                        <td>R$ 250.00</td>
-                        <td><i class="fa-solid fa-arrow-trend-up text-success"></i></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">01/01/2023</th>
-                        <td>Aluguel</td>
-                        <td>R$ 250.00</td>
-                        <td><i class="fa-solid fa-arrow-trend-down text-danger"></i></td>
-                    </tr>
-                </tbody>
+                <tbody id="corpo-tabela"></tbody>
             </table>
         </div>
 
