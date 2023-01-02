@@ -2,6 +2,10 @@ $(document).ready(function(){
     montarSelectIntegrantes();
     montarSelectCategoria();
     salvarMovimentacao();
+    salvarIntegrante();
+    recuperarIntegrante();
+    salvarMes();
+    recuperarIntegranteMes();
 })
 
 function montarSelectIntegrantes()
@@ -83,4 +87,146 @@ function salvarMovimentacao()
 
     });
 
+}
+
+function salvarIntegrante()
+{
+    $('#btn_acessar_casa').click(function(){
+
+        var integrante_casa = $('#integrante_casa').val();
+        localStorage.setItem('integrante', integrante_casa);
+        window.location.href = 'calendario.php';
+
+    });
+
+    $('#btn_acessar_felipe').click(function(){
+
+        var integrante_felipe = $('#integrante_felipe').val();
+        localStorage.setItem('integrante', integrante_felipe);
+        window.location.href = 'calendario.php';
+
+    });
+
+    $('#btn_acessar_geraldo').click(function(){
+
+        var integrante_geraldo = $('#integrante_geraldo').val();
+        localStorage.setItem('integrante', integrante_geraldo);
+        window.location.href = 'calendario.php';
+
+    });
+
+}
+
+function recuperarIntegrante()
+{
+    var integrante = localStorage.getItem('integrante');
+    $('#nome-integrante').text(integrante);
+}
+
+function salvarMes()
+{
+    $('#btn_janeiro').click(function(){
+
+        var mes = $('#janeiro').val();
+        localStorage.setItem('mes', mes);
+        window.location.href = 'relatorio.php';
+
+    });
+
+    $('#btn_fevereiro').click(function(){
+
+        var mes = $('#fevereiro').val();
+        localStorage.setItem('mes', mes);
+        window.location.href = 'relatorio.php';
+
+    });
+
+    $('#btn_marco').click(function(){
+
+        var mes = $('#marco').val();
+        localStorage.setItem('mes', mes);
+        window.location.href = 'relatorio.php';
+
+    });
+
+    $('#btn_abril').click(function(){
+
+        var mes = $('#abril').val();
+        localStorage.setItem('mes', mes);
+        window.location.href = 'relatorio.php';
+
+    });
+
+    $('#btn_maio').click(function(){
+
+        var mes = $('#maio').val();
+        localStorage.setItem('mes', mes);
+        window.location.href = 'relatorio.php';
+
+    });
+
+    $('#btn_junho').click(function(){
+
+        var mes = $('#junho').val();
+        localStorage.setItem('mes', mes);
+        window.location.href = 'relatorio.php';
+
+    });
+
+    $('#btn_julho').click(function(){
+
+        var mes = $('#julho').val();
+        localStorage.setItem('mes', mes);
+        window.location.href = 'relatorio.php';
+
+    });
+
+    $('#btn_agosto').click(function(){
+
+        var mes = $('#agosto').val();
+        localStorage.setItem('mes', mes);
+        window.location.href = 'relatorio.php';
+
+    });
+
+    $('#btn_setembro').click(function(){
+
+        var mes = $('#setembro').val();
+        localStorage.setItem('mes', mes);
+        window.location.href = 'relatorio.php';
+
+    });
+
+    $('#btn_outubro').click(function(){
+
+        var mes = $('#outubro').val();
+        localStorage.setItem('mes', mes);
+        window.location.href = 'relatorio.php';
+
+    });
+
+    $('#btn_novembro').click(function(){
+
+        var mes = $('#novembro').val();
+        localStorage.setItem('mes', mes);
+        window.location.href = 'relatorio.php';
+
+    });
+
+    $('#btn_dezembro').click(function(){
+
+        var mes = $('#dezembro').val();
+        localStorage.setItem('mes', mes);
+        window.location.href = 'relatorio.php';
+
+    });
+}
+
+function recuperarIntegranteMes()
+{
+    var integrante = localStorage.getItem('integrante');
+    var mes = localStorage.getItem('mes');
+    
+    $('#nome-integrante').text(integrante);
+    $('#mes').text(mes);
 }

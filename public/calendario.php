@@ -1,13 +1,3 @@
-<?php
-
-session_start();
-if($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $_SESSION['data_filtro'] = $_POST['mes'];
-    header('Location: relatorio.php');
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -40,100 +30,102 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
         </nav>
 
         <div class="container mt-3 mb-3">
-            <h1 class="text-info"><?php echo $_SESSION['integrante'] ?></h1>
+            <h1 class="text-info" id="nome-integrante"></h1>
             <h4>Selecione o mês do filtro.</h4>
 
             <hr class="bg-info" />
 
-            <form class="form-inline mb-2" action="calendario.php" method="POST">
+            <form class="form-inline mb-2">
                 <div class="form-group">
-                    <input type="text" name="mes" class="form-control mx-sm-3" hidden value="Janeiro" />
+                    <input type="text" id="janeiro" class="form-control mx-sm-3" hidden value="Janeiro" />
                 </div>
-                <button type="submit" class="btn btn-info w-100">Janeiro</button>
+                <button type="button" id="btn_janeiro" class="btn btn-info w-100">Janeiro</button>
             </form>
 
-            <form class="form-inline mb-2" action="calendario.php" method="POST">
+            <form class="form-inline mb-2">
                 <div class="form-group">
-                    <input type="text" name="mes" class="form-control mx-sm-3" hidden value="Fevereiro" />
+                    <input type="text" id="fevereiro" class="form-control mx-sm-3" hidden value="Fevereiro" />
                 </div>
-                <button type="submit" class="btn btn-info w-100">Fevereiro</button>
+                <button type="button" id="btn_fevereiro" class="btn btn-info w-100">Fevereiro</button>
             </form>
 
-            <form class="form-inline mb-2" action="calendario.php" method="POST">
+            <form class="form-inline mb-2">
                 <div class="form-group">
-                    <input type="text" name="mes" class="form-control mx-sm-3" hidden value="Março" />
+                    <input type="text" id="marco" class="form-control mx-sm-3" hidden value="Março" />
                 </div>
-                <button type="submit" class="btn btn-info w-100">Março</button>
+                <button type="button" id="btn_marco" class="btn btn-info w-100">Março</button>
             </form>
 
-            <form class="form-inline mb-2" action="calendario.php" method="POST">
+            <form class="form-inline mb-2">
                 <div class="form-group">
-                    <input type="text" name="mes" class="form-control mx-sm-3" hidden value="Abril" />
+                    <input type="text" id="abril" class="form-control mx-sm-3" hidden value="Abril" />
                 </div>
-                <button type="submit" class="btn btn-info w-100">Abril</button>
+                <button type="button" id="btn_abril" class="btn btn-info w-100">Abril</button>
             </form>
 
-            <form class="form-inline mb-2" action="calendario.php" method="POST">
+            <form class="form-inline mb-2">
                 <div class="form-group">
-                    <input type="text" name="mes" class="form-control mx-sm-3" hidden value="Maio" />
+                    <input type="text" id="maio" class="form-control mx-sm-3" hidden value="Maio" />
                 </div>
-                <button type="submit" class="btn btn-info w-100">Maio</button>
+                <button type="button" id="btn_maio" class="btn btn-info w-100">Maio</button>
             </form>
 
-            <form class="form-inline mb-2" action="calendario.php" method="POST">
+            <form class="form-inline mb-2">
                 <div class="form-group">
-                    <input type="text" name="mes" class="form-control mx-sm-3" hidden value="Junho" />
+                    <input type="text" id="junho" class="form-control mx-sm-3" hidden value="Junho" />
                 </div>
-                <button type="submit" class="btn btn-info w-100">Junho</button>
+                <button type="button" id="btn_junho" class="btn btn-info w-100">Junho</button>
             </form>
 
-            <form class="form-inline mb-2" action="calendario.php" method="POST">
+            <form class="form-inline mb-2">
                 <div class="form-group">
-                    <input type="text" name="mes" class="form-control mx-sm-3" hidden value="Julho" />
+                    <input type="text" id="julho" class="form-control mx-sm-3" hidden value="Julho" />
                 </div>
-                <button type="submit" class="btn btn-info w-100">Julho</button>
+                <button type="button" id="btn_julho" class="btn btn-info w-100">Julho</button>
             </form>
 
-            <form class="form-inline mb-2" action="calendario.php" method="POST">
+            <form class="form-inline mb-2">
                 <div class="form-group">
-                    <input type="text" name="mes" class="form-control mx-sm-3" hidden value="Agosto" />
+                    <input type="text" id="agosto" class="form-control mx-sm-3" hidden value="Agosto" />
                 </div>
-                <button type="submit" class="btn btn-info w-100">Agosto</button>
+                <button type="button" id="btn_agosto" class="btn btn-info w-100">Agosto</button>
             </form>
 
-            <form class="form-inline mb-2" action="calendario.php" method="POST">
+            <form class="form-inline mb-2">
                 <div class="form-group">
-                    <input type="text" name="mes" class="form-control mx-sm-3" hidden value="Setembro" />
+                    <input type="text" id="setembro" class="form-control mx-sm-3" hidden value="Setembro" />
                 </div>
-                <button type="submit" class="btn btn-info w-100">Setembro</button>
+                <button type="button" id="btn_setembro" class="btn btn-info w-100">Setembro</button>
             </form>
 
-            <form class="form-inline mb-2" action="calendario.php" method="POST">
+            <form class="form-inline mb-2">
                 <div class="form-group">
-                    <input type="text" name="mes" class="form-control mx-sm-3" hidden value="Outubro" />
+                    <input type="text" id="outubro" class="form-control mx-sm-3" hidden value="Outubro" />
                 </div>
-                <button type="submit" class="btn btn-info w-100">Outubro</button>
+                <button type="button" id="btn_outubro" class="btn btn-info w-100">Outubro</button>
             </form>
 
-            <form class="form-inline mb-2" action="calendario.php" method="POST">
+            <form class="form-inline mb-2">
                 <div class="form-group">
-                    <input type="text" name="mes" class="form-control mx-sm-3" hidden value="Novembro" />
+                    <input type="text" id="novembro" class="form-control mx-sm-3" hidden value="Novembro" />
                 </div>
-                <button type="submit" class="btn btn-info w-100">Novembro</button>
+                <button type="button" id="btn_novembro" class="btn btn-info w-100">Novembro</button>
             </form>
 
-            <form class="form-inline mb-2" action="calendario.php" method="POST">
+            <form class="form-inline mb-2">
                 <div class="form-group">
-                    <input type="text" name="mes" class="form-control mx-sm-3" hidden value="Dezembro" />
+                    <input type="text" id="dezembro" class="form-control mx-sm-3" hidden value="Dezembro" />
                 </div>
-                <button type="submit" class="btn btn-info w-100">Dezembro</button>
+                <button type="button" id="btn_dezembro" class="btn btn-info w-100">Dezembro</button>
             </form>
 
             
         </div>
 
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="assets/js/jquery.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="https://kit.fontawesome.com/910e6444fa.js"></script>
+        <script src="assets/js/index.js"></script>
     </body>
 </html>

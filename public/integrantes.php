@@ -1,13 +1,3 @@
-<?php
-
-session_start();
-if($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $_SESSION['integrante'] = $_POST['nome_integrante'];
-    header('Location: calendario.php');
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -63,11 +53,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </ul>
                     </div>
                     <div class="card-footer">
-                        <form action="integrantes.php" method="POST">
+                        <form>
                             <div class="form-group">
-                                <input type="text" hidden class="form-control" name="nome_integrante" value="Casa" />
+                                <input type="text" hidden class="form-control" id="integrante_casa" value="Casa" />
                             </div>
-                            <button type="submit" class="btn btn-info w-100 mb-3">Acessar</button>
+                            <button type="button" id="btn_acessar_casa" class="btn btn-info w-100 mb-3">Acessar</button>
                         </form>
                     </div>
                 </div>
@@ -89,11 +79,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </ul>
                     </div>
                     <div class="card-footer">
-                        <form action="integrantes.php" method="POST">
+                        <form>
                             <div class="form-group">
-                                <input type="text" hidden class="form-control" name="nome_integrante" value="Felipe" />
+                                <input type="text" hidden class="form-control" id="integrante_felipe" value="Felipe" />
                             </div>
-                            <button type="submit" class="btn btn-info w-100 mb-3">Acessar</button>
+                            <button type="button" id="btn_acessar_felipe" class="btn btn-info w-100 mb-3">Acessar</button>
                         </form>
                     </div>
                 </div>
@@ -115,19 +105,21 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </ul>
                     </div>
                     <div class="card-footer">
-                        <form action="integrantes.php" method="POST">
+                        <form>
                             <div class="form-group">
-                                <input type="text" hidden class="form-control" name="nome_integrante" value="Geraldo" />
+                                <input type="text" hidden class="form-control" id="integrante_geraldo" value="Geraldo" />
                             </div>
-                            <button type="submit" class="btn btn-info w-100 mb-3">Acessar</button>
+                            <button type="button" id="btn_acessar_geraldo" class="btn btn-info w-100 mb-3">Acessar</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
 
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="assets/js/jquery.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="https://kit.fontawesome.com/910e6444fa.js"></script>
+        <script src="assets/js/index.js"></script>
     </body>
 </html>
